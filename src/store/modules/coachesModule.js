@@ -64,9 +64,9 @@ export default {
   actions: {
     async registerCoach(context, coachInfo) {
       const userId = context.rootGetters.userId;
-
+      const token = context.rootGetters.token;
       const response = await fetch(
-        `https://find-a-coach-e199d-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+        `https://find-a-coach-e199d-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=${token}`,
         {
           method: 'PUT', // 为什么用put不用post
           body: JSON.stringify(coachInfo),

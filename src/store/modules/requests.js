@@ -52,13 +52,14 @@ export default {
     },
     async fetchRequests(context) {
       const coachId = context.rootGetters.userId; // 只获取服务器上的这个id下的requests
+      const token = context.rootGetters.token;
       const response = await fetch(
-        `https://find-a-coach-e199d-default-rtdb.firebaseio.com/requests/${coachId}.json`
+        `https://find-a-coach-e199d-default-rtdb.firebaseio.com/requests/${coachId}.json?auth=${token}`
       );
       const responseData = await response.json();
       if (!response.ok) {
         const error = new Error(
-          responseData.message || 'Failed to send request.'
+          responseData.message || 'Failed to fetch requests.'
         );
         throw error;
       }
