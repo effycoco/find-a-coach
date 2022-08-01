@@ -22,9 +22,10 @@ export default {
   },
   watch: {
     didAutoLogout(cur, prev) {
-      if (cur && cur !== prev) {
+      if (cur && prev !== cur) {
         this.$router.replace('/coaches');
       }
+      console.log(`didAutoLogout changed from ${prev} to ${cur}`);
     },
   },
 };
