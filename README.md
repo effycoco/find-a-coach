@@ -59,7 +59,7 @@ const ContactCoach = () => import('./pages/requests/ContactCoach.vue');
 280 Building the project for production. 如果是简单的项目，没用到 vue-cli, 部署项目可直接上传所有文件；如果较为复杂，用到了 vue-cli，在 部署前应先如上节优化代码，然后再 build，该步骤会自动进一步优化代码。手写的代码需要经 build 过程转换成(transform to)普通 JS 代码才能被浏览器理解。
 npm run build 后会生成一个 dist 文件夹，存储经转换的代码，部署时只需上传该文件夹里的内容。
 
-通过 github 部署，只需 cd dist，然后将所有文件上传到 repo，在 setting-pages 选择分支，保存即可。
+通过 github 部署，部署步骤详见[博客文章](https://record-everything.vercel.app/2022/vue-deployment-with-github-pages/)。
 
 # 知识点
 
